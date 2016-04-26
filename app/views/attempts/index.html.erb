@@ -1,0 +1,9 @@
+<h1>Top Three Attempt Scores</h1>
+
+<ul>
+  <% @attempts.each do |attempt| %>
+    <li>
+      <%= "#{attempt.text} Level: #{attempt.level.title}"  %>
+    </li>
+  <% end %>
+</ul>

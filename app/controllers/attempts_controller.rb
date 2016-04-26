@@ -14,6 +14,11 @@ class AttemptsController < ApplicationController
     @attempt = Attempt.find(params[:id])
   end
 
+  def index
+    @attempts = Attempt.all.sort_by {|attempt| - attempt.percent_correct }
+    @attempts = @attempts.take(3)
+  end
+
 private
 
   def attempt_params
