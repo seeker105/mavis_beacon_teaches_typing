@@ -15,7 +15,7 @@ class AttemptsController < ApplicationController
   end
 
 private
-  
+
   def attempt_params
     params.require(:attempt).permit(:text)
   end
