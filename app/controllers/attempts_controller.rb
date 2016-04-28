@@ -15,13 +15,16 @@ class AttemptsController < ApplicationController
   end
 
   def index
-    @attempts = Attempt.all.sort_by {|attempt| - attempt.percent_correct }
-    @attempts = @attempts.take(3)
+    @attempts = Attempt.where(search_params)
   end
 
 private
 
   def attempt_params
-    params.require(:attempt).permit(:text)
+    params.require(:attempt).permit(:text, :name)
+  end
+
+  def search_params
+    params.permit(:name)
   end
 end

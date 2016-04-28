@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160112004800) do
+ActiveRecord::Schema.define(version: 20160427214357) do
 
   create_table "attempts", force: :cascade do |t|
     t.text     "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "level_id"
+    t.string   "name"
   end
 
   add_index "attempts", ["level_id"], name: "index_attempts_on_level_id"

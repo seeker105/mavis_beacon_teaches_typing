@@ -5,6 +5,7 @@
 </div>
 
 <%= form_for([@level, @attempt]) do |f| %>
+  <%= f.text_field :name, placeholder: "Name:" %>
   <%= f.label :text %>
   <%= f.text_area :text %>
 
